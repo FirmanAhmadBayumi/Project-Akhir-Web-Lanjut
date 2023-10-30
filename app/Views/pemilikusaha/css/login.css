@@ -1,0 +1,40 @@
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  background-image: url("../images/cucimtr_bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 65%;
+}
+
+.right {
+  box-sizing: border-box;
+  width: 35%;
+  height: 100vh;
+  background-color: #a9a9a9;
+}
+
+.right h1.text-brand {
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 2px solid #000;
+  font-weight: 500;
+}
+
+.right .form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.right .form-login h1.login-text {
+  border: none;
+  padding-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
