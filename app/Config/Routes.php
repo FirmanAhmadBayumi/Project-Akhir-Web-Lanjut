@@ -7,6 +7,9 @@ use App\Controllers\Home;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('/landing-page', function() {
+    return view('index');
+});
 
 $routes->get('/login', [Home::class, 'login']);
 
