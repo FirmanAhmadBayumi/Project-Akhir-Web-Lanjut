@@ -11,6 +11,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/landing-page', function() {
     return view('index');
 });
+$routes->get('/dashboard', function() {
+    return view('dashboard');
+});
 
 $routes->get('/masuk', [Home::class, 'login']);
 

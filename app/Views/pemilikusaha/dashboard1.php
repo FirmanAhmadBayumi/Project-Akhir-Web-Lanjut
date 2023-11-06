@@ -1,10 +1,44 @@
-<?= $this->extend("layouts/app") ?>
 
-<?= $this->section("content") ?>
-    <!-- ======= Hero Section ======= -->
-   <br><br><br><br><br><br><br>
-    <main id="main">
-        <div class="container">
+
+<!-- Page Content  -->
+<?= $this->extend('layouts/app')?>
+
+<?= $this->section('content')?>
+<body>
+  <div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="bg-secondary">
+      <div class="p-4 pt-5">
+        <a href="#" class="img logo rounded-circle mb-5" style="background-image: url(https://avatars.githubusercontent.com/u/92315859?s=400&u=10a10a362ae996f70189923325175b1541d56e74&v=4)"></a>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="./dashboard">Laporan Keuangan</a>
+          </li>
+          <li>
+            <a href="./tarif">Tarif Harga</a>
+          </li>
+          <li>
+            <a href="#" onclick="logout()">Keluar</a>
+          </li>
+        </ul>
+    </nav>
+    <?= $this->renderSection('content') ?>
+    </div>
+<div id="content" class="p-4 p-md-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <h3 align="center">Laporan Keuangan</h3>
+    </nav>
+    <hr>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <select class="custom-select">
+                <option selected>Laporan Keuangan Mingguan</option>
+                <option selected>Laporan Keuangan Bulanan</option>
+                <option selected>Laporan Keuangan Tahunan</option>
+            </select>
+        </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table" id="datatable">
             <thead>
@@ -38,7 +72,5 @@
         </table>
     </div>
 </div>
-</main>
-
-
-<?= $this->endSection() ?>
+<?= $this->endSection()?>
+<?php include('layout/footer.php'); ?>
