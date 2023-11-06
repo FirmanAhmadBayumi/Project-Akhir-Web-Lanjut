@@ -1,5 +1,3 @@
-
-
 <!-- Page Content  -->
 <?= $this->extend('layouts/app')?>
 
