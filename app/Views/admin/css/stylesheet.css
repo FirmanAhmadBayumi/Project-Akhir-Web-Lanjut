@@ -1,0 +1,29 @@
+.box-transaksi {
+  height: auto;
+  background-color: #6c757d;
+  width: 1000px;
+  border-radius: 10px;
+}
+.box-transaksi .user {
+  padding: 50px 50px;
+}
+.box-transaksi .user p {
+  font-size: 40px;
+  color: #fff;
+}
+
+.box {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.box .user p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#sidebar ul li .active {
+  color: #fff;
+  font-weight: 600;
+}

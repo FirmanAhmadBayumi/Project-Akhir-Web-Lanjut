@@ -27,3 +27,11 @@ $routes->get('/pemilikusaha/detail', 'Pemilik::detail');
 $routes->get('pelanggan/dashboard', [PelangganController::class,'dashboard']);
 $routes->get('pelanggan/pesan', [PelangganController::class, 'pesan']);
 $routes->get('pelanggan/pesan/detail_pesanan', [PelangganController::class, 'detail_pesanan']); 
+
+//admin
+$routes->get('/admin/dashboard', 'AdminController::dashboard');
+$routes->get('/admin/datapelanggan', 'AdminController::datapelanggan');
+$routes->get('/admin/datatransaksi', 'AdminController::datatransaksi');
+$routes->get('/admin/pesanan', 'AdminController::pesanan');
+$routes->get('/admin/pembayaran', 'AdminController::pembayaran');
+$routes->get('/admin/laporan', 'AdminController::laporan');
