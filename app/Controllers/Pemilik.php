@@ -11,9 +11,9 @@ class Pemilik extends BaseController
     }
     public function dashboard(): string
     {
-        return view('/dashboard');
+        return view('pemilikusaha/dashboard');
     }
-    public function tarif(): string
+    public function tarif()
     {
         return view('pemilikusaha/tarif');
     }
