@@ -24,4 +24,7 @@ class PelangganController extends BaseController
         ];
         return view("pelanggan/detail_pesanan", $data);
     }
+    public function pembayaran(){
+        return view("pelanggan/pembayaran");
+    }
 }

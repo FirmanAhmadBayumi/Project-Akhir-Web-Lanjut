@@ -26,6 +26,7 @@ $routes->get('pemilikusaha/detail', [Pemilik::class,'detail']);
 $routes->get('pelanggan/dashboard', [PelangganController::class,'dashboard']);
 $routes->get('pelanggan/pesan', [PelangganController::class, 'pesan']);
 $routes->get('pelanggan/pesan/detail_pesanan', [PelangganController::class, 'detail_pesanan']); 
+$routes->get('pelanggan/pembayaran', 'PelangganController::pembayaran');
 
 //admin
 $routes->get('/admin/dashboard', 'AdminController::dashboard');

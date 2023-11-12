@@ -14,21 +14,22 @@
                     <div class="row mb-3">
                         <label for="nama" class="col-sm-3 col-form-label text-dark fs-6">Nama</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="nama" name="nama"/>
+                            <input type="text" class="form-control" id="nama" name="nama" />
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="alamat" class="col-sm-3 col-form-label text-dark fs-6">Alamat</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="alamat" name="alamat"/>
+                            <input type="text" class="form-control" id="alamat" name="alamat" />
                         </div>
                     </div>
 
                     <div class="row mt-3">
                         <label for="jns_mtr" class="col-sm-3 col-form-label text-dark fs-6">Jenis Motor</label>
                         <div class="col-sm-3">
-                            <input type="text" class="dorm-control" id="jns_mtr" name="jns_mtr" aria-label="Disabled input example" disabled/>
+                            <input type="text" class="dorm-control" id="jns_mtr" name="jns_mtr"
+                                aria-label="Disabled input example" disabled />
                         </div>
                     </div>
 
@@ -44,7 +45,7 @@
                         </div>
                     </div>
 
-                    <a href="#" class="btn btn-success mt-3">Selanjutnya</a>
+                    <a href="pembayaran.php" class="btn btn-success mt-3">Selanjutnya</a>
                 </form>
             </div>
         </div>
