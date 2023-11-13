@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="<?= base_url('login/images/icons/favicon.ico') ?>" />
-    <link rel="stylesheet" type="text/css"
-        href="<?= base_url('login/vendor-login/bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('login/vendor-login/bootstrap/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css"
         href="<?= base_url('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') ?>">
     <link rel="stylesheet" type="text/css"
@@ -32,7 +31,7 @@
                 <form class="login100-form validate-form">
 
                     <span class="login100-form-title p-b-34 p-t-27">
-                        Masuk
+                        Daftar
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate="Masukkan Nama Pengguna">
@@ -47,9 +46,8 @@
 
                     <div class="container-login100-form-btn">
                         <a href="">
-                            <button class="login100-form-btn">Masuk</button>
+                            <button class="login100-form-btn">Daftar</button>
                         </a>
-                    </div>
                     </div>
                 </form>
             </div>

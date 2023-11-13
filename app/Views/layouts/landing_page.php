@@ -53,7 +53,6 @@
                     <li><a href="">BERANDA</a></li>
                     <li><a href="#about">TENTANG</a></li>
                     <li><a href="#trainers">TIM</a></li>
-                    <li><a href="/masuk">MASUK</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>

@@ -8,13 +8,17 @@ use App\Controllers\Pemilik;
 /**
  * @var RouteCollection $routes
  */
+
+ //landing page
 $routes->get('/', 'Home::index');
 $routes->get('/landing-page', function() {
     return view('index');
 });
 
-
+//login dan register
 $routes->get('/masuk', [Home::class, 'login']);
+$routes->get('/daftar', [Home::class, 'register']);
+
 
 $routes->get('/', 'Home::dashboard');
 //pemilik usaha
