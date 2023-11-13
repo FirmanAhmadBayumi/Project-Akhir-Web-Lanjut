@@ -34,13 +34,18 @@
                     </div>
 
                     <div class="row mt-3">
-                        <label for="area" class="col-sm-3 col-form-label text-dark fs-6">Pilih Area Pencucian</label>
+                        <label for="area_pencucian" class="col-sm-3 col-form-label text-dark fs-6">Pilih Area Pencucian</label>
                         <div class="col-sm-2">
-                            <select type="text" class="form-select" id="area" name="area">
-                                <option value="">Pilih Area</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                                <option value="">3</option>
+                            <select type="text" class="form-select" id="area_pencucian" name="area_pencucian">
+                                <?php
+                                foreach($area_pencucian as $area){
+                                ?>
+                                <option value="<?= $area['id']?>">
+                                    <?= $area['area_pencucian'] ?>
+                                </option>
+                                <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>

@@ -9,6 +9,7 @@
             dan Bertahan Lama - Pilihlah Cucian Motor Kami, Karena Kami Mengerti dan Peduli akan Kebutuhan Motor
             Mu."</h2>
         <a href="/masuk" class="btn-get-started">Masuk</a>
+        <a href="/daftar" class="btn-get-started mx-2">Daftar</a>
     </div>
 </section><!-- End Hero -->
 
