@@ -39,7 +39,16 @@
                 <ul>
                     <li><a href="<?= base_url('pelanggan/dashboard') ?>">BERANDA</a></li>
                     <li><a href="<?= base_url('pelanggan/pesan') ?>">PESAN SEKARANG</a></li>
-                    <!-- <li><a href="#">PEMBAYARAN</a></li> -->
+                    <li><a href="<?= base_url('pelanggan/riwayat_transaksi') ?>">RIWAYAT TRANSAKSI</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">PROFIL
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/create_data_pelanggan') ?>">Tambah Data Pelanggan</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/profil') ?>">Lihat Data Pelanggan</a></li>
+                        </ul>
+                    </li>
                     <li><a href="<?= base_url('/') ?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
@@ -127,6 +136,7 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Vendor-1 JS Files -->
     <script src="<?= base_url('../assets/vendor-1/purecounter/purecounter_vanilla.js') ?>"></script>
     <script src="<?= base_url('../assets/vendor-1/aos/aos.js') ?>"></script>

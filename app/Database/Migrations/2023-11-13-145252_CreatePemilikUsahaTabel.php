@@ -16,9 +16,9 @@ class CreatePemilikUsahaTabel extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'jenis' => [
+            'jenis_kendaraan' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '50',
             ],
             'harga' => [
                 'type' => 'INT',
@@ -26,7 +26,7 @@ class CreatePemilikUsahaTabel extends Migration
             ],
             'foto' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '255',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -43,12 +43,12 @@ class CreatePemilikUsahaTabel extends Migration
         ]);
 
         $this->forge->addKey('id', true, true);
-        $this->forge->createTable('pemilik_usaha');
+        $this->forge->createTable('data_kendaraan');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pemilik_usaha', true);
+        $this->forge->dropTable('data_kendaraan', true);
     }
     
 }

@@ -12,7 +12,7 @@ class DataPelangganModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nama','alamat','jenis_kelamin','no_hp'];
 
     // Dates
     protected $useTimestamps = false;
@@ -37,4 +37,14 @@ class DataPelangganModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function saveDataPelanggan($data){
+        $this->insert($data);
+    }
+    public function getDataPelanggan(){
+        return $this->select('data_pelanggan.*')->where('id', 2)->first();
+    }
+    public function updateDataPelanggan($id, $data){
+        return $this->update($id, $data);
+    }
 }

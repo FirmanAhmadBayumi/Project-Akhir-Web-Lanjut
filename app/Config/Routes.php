@@ -26,11 +26,21 @@ $routes->get('pemilikusaha/dashboard', [Pemilik::class,'dashboard']);
 $routes->get('pemilikusaha/tarif', [Pemilik::class,'tarif']);
 $routes->get('pemilikusaha/detail', [Pemilik::class,'detail']);
 
-//pelanggan
+//pelanggan hal. dashboard
 $routes->get('pelanggan/dashboard', [PelangganController::class,'dashboard']);
-$routes->get('pelanggan/pesan', [PelangganController::class, 'pesan']);
-$routes->get('pelanggan/pesan/detail_pesanan', [PelangganController::class, 'detail_pesanan']); 
-$routes->get('pelanggan/pembayaran', 'PelangganController::pembayaran');
+
+//data_pelanggan CRUD
+$routes->get('pelanggan/create_data_pelanggan', [PelangganController::class, 'tambahDataPelanggan']); //hal. create data pelanggan
+$routes->post('pelanggan/data_pelanggan', [PelangganController::class, 'createDataPelanggan']); //proses pengiriman data pelanggan ke db
+$routes->get('pelanggan/profil/(:any)/edit', [PelangganController::class, 'editDataPelanggan']); //halaman proses edit data
+$routes->put('pelanggan/profil/(:any)', [PelangganController::class, 'updateDataPelanggan']); //proses edit/update data
+$routes->get('pelanggan/profil', [PelangganController::class, 'showProfilPelanggan']); //read data pelanggan
+
+//data_transaksi pelanggan CRUD
+$routes->get('pelanggan/pesan', [PelangganController::class, 'pesan']); //halaman jenis kendaraan
+$routes->get('pelanggan/pesan/detail_pesanan', [PelangganController::class, 'detail_pesanan']); //halaman form untuk detail pesanan
+$routes->post('pelanggan/pesan/data', [PelangganController::class,'createDataTransaksi']); //proses utk menambahkan data transaksi
+$routes->get('pelanggan/riwayat_transaksi', [PelangganController::class, 'showRiwayatTransaksi']); //menampilkan riwayat transaksi
 
 //admin
 $routes->get('/admin/dashboard', 'AdminController::dashboard');

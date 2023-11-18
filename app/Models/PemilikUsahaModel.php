@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class PemilikUsahaModel extends Model
 {
-    protected $table            = 'pemilik_usaha';
+    protected $table            = 'data_kendaraan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['jenis', 'harga', 'foto'];
+    protected $allowedFields    = ['jenis_kendaraan', 'harga', 'foto'];
 
     // Dates
     protected $useTimestamps = true;
@@ -37,4 +37,8 @@ class PemilikUsahaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getDataKendaraan(){
+        return $this->select('data_kendaraan.*')->findAll();
+    }
 }

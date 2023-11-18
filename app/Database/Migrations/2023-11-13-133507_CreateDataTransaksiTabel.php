@@ -23,6 +23,10 @@ class CreateDataTransaksiTabel extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'tgl_pemesanan' => [
+                'type' => 'DATETIME',
+                'null' => false,
+            ],
             'jenis_motor' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -31,6 +35,15 @@ class CreateDataTransaksiTabel extends Migration
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
+            ],
+            'harga' => [
+                'type' => 'INT',
+                'constraint' => 12,
+                'unsigned' => true,
+            ],
+            'jns_pembayaran' => [
+                'type' => 'VARCHAR',
+                'constraint' => '25',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
