@@ -12,21 +12,21 @@ class PemilikUsahaSeeder extends Seeder
         $pemilikUsahaModel = new PemilikUsahaModel();
 
         $pemilikUsahaModel->save([
-            'jenis' => 'Scooter',
+            'jenis_kendaraan' => 'Scooter',
             'harga' => 10000,
-            'foto' => 'assets/images/foto1.jpg',
+            'foto' => '../assets/img/motor-matic.jpeg',
         ]);
 
         $pemilikUsahaModel->save([
-            'jenis' => 'Cub',
+            'jenis_kendaraan' => 'Cub',
             'harga' => 15000,
-            'foto' => 'assets/images/foto2.jpg',
+            'foto' => '../assets/img/motor-bebek.jpeg',
         ]);
 
         $pemilikUsahaModel->save([
-            'jenis' => 'Sport-Bike',
-            'harga' => 20000,
-            'foto' => 'assets/images/foto3.jpg',
+            'jenis_kendaraan' => 'Sport-Bike',
+            'harga' => 30000,
+            'foto' => '../assets/img/motor-laki.jpeg',
         ]);
     }
 }

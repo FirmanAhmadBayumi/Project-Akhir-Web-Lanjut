@@ -12,7 +12,7 @@ class DataTransaksiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nama', 'alamat', 'tgl_pemesanan', 'jenis_motor', 'id_area_pencucian', 'harga', 'jns_pembayaran'];
 
     // Dates
     protected $useTimestamps = false;
@@ -37,4 +37,12 @@ class DataTransaksiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function saveDataTransaksi($data){
+        $this->insert($data);
+    }
+    public function getDataTransaksi(){
+        return $this->select('data_transaksi.*, area_pencucian.area_pencucian')
+            ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->findAll();
+    }
 }
