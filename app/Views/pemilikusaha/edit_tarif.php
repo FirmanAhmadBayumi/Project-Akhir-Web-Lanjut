@@ -50,9 +50,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="dashboard">Laporan Keuangan</a></li>
-                    <li><a href="tarif">Tarif Harga</a></li>
-                    <li><a href="area">Area Pencuician</a></li>
+                    <li><a href="../dashboard">Laporan Keuangan</a></li>
+                    <li><a href="../tarif">Tarif Harga</a></li>
+                    <li><a href="../area">Area Pencuician</a></li>
                     <li><a href="logout">Keluar</a></li>
                    
                 </ul>
@@ -74,7 +74,7 @@
             <form enctype="multipart/form-data" method="post" >
                 <div class="form-group">
                     <label for="jenis_kendaraan">Jenis Kendaraan</label>
-                    <input type="text" class="form-control" id="jenis_kendaraan" name="jenis_kendaraan" value="<?= $data['jenis'];?>">
+                    <input type="text" class="form-control" id="jenis_kendaraan" name="jenis_kendaraan" value="<?= $data['jenis_kendaraan'];?>">
                 </div>
                 <div class="form-group">
                     <label for="harga">Harga</label>

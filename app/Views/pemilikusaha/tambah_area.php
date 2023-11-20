@@ -50,9 +50,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="dashboard">Laporan Keuangan</a></li>
-                    <li><a href="tarif">Tarif Harga</a></li>
-                    <li><a href="area">Area Pencuician</a></li>
+                    <li><a href="../dashboard">Laporan Keuangan</a></li>
+                    <li><a href="../tarif">Tarif Harga</a></li>
+                    <li><a href="../area">Area Pencuician</a></li>
                     <li><a href="logout">Keluar</a></li>
                    
                 </ul>
@@ -77,7 +77,7 @@
                     <input type="text" class="form-control" id="jenis_kendaraan" name="nama">
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="tarif_harga.php" class="btn btn-danger mr-2">Batal</a>
+                    <a href="../../area" class="btn btn-danger mr-2">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>

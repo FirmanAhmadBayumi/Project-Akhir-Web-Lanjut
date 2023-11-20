@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 
 
-class CreatePemilikUsahaTabel extends Migration
+class CreateDataKendaraanTabel extends Migration
 {
     public function up()
     {

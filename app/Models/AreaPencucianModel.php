@@ -62,3 +62,5 @@ class AreaPencucianModel extends Model
         return $this->delete($id);
     }
 }
+
+

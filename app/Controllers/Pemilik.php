@@ -77,7 +77,7 @@ class Pemilik extends BaseController
     
             // Insert the data into the database
             $data = [
-                'jenis' => $jenisKendaraan,
+                'jenis_kendaraan' => $jenisKendaraan,
                 'harga' => $harga,
                 'foto' => $newFilename,
             ];
@@ -112,7 +112,7 @@ class Pemilik extends BaseController
 
         // Update the data in the database
         $data = [
-            'jenis' => $jenisKendaraan,
+            'jenis_kendaraan' => $jenisKendaraan,
             'harga' => $harga,
             'foto' => $newFilename,
         ];
