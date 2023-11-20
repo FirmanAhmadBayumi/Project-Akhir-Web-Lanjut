@@ -51,10 +51,12 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
+            
                     <li><a href="dashboard">Laporan Keuangan</a></li>
                     <li><a href="tarif">Tarif Harga</a></li>
+                    <li><a href="area">Area Pencuician</a></li>
                     <li><a href="logout">Keluar</a></li>
-                   
+                
                 </ul>
             </nav><!-- .navbar -->
         </div>

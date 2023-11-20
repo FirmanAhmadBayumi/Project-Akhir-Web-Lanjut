@@ -40,7 +40,7 @@
     ======================================================== -->
 </head>
 
-<body>
+<body style="background: rgba(0, 0, 0, 0.1);">
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
@@ -51,68 +51,106 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
+            
                     <li><a href="dashboard">Laporan Keuangan</a></li>
                     <li><a href="tarif">Tarif Harga</a></li>
                     <li><a href="area">Area Pencuician</a></li>
                     <li><a href="logout">Keluar</a></li>
-                   
+                
                 </ul>
             </nav><!-- .navbar -->
         </div>
     </header><!-- End Header -->
-<!-- Page Content  -->
-<div id="content" class="p-4 p-md-5" >
-   <br><br><br>
-
-    <div id="chart"></div>
+<div class="conainer-fluid" style="background: rgba(0, 0, 0, 0.1);">
+    <!-- ======= Hero Section ======= -->
+   <br><br><br><br>
+  
+        <div class="container " >
+            <a href="area/tambah" class="btn btn-primary">TAMBAH</a>
+    <div class="table-responsive" style=" background: none !important;margin-left:20%;text-decoration:none;">
+    <style>
+        .bs-table-bg{background: none;}
+    </style>
+        <table class=" table" id="datatable"  style="--bs-table-bg: transparent; background: none !important;">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Aksi</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            <?php $row=1; foreach($area as $dt):?>
+                <tr>
+                    <td><?= $row++; ?></td>
+                    <td> <?= $dt['area_pencucian']; ?></td>
+                    <td class="inline-flex"><a class="btn btn-sm btn-secondary" href="area/delete/<?=$dt['id'];?>">Hapus</a></td>
+                </tr>
+                <?php endforeach; ?>    
+            </tbody>
+        </table>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.27.3/dist/apexcharts.min.js"></script>
+</div>
+<main id="main" >
+<section id="trainers" class="trainers">
+            <div class="container" >
 
-<script>
-  var options = {
-  series: [
-    {
-      name: "CareWash",
-      data: [4200000, 6000000, 7000000, 10000000, 6000000, 5000000, 7000000, 8000000, 9000000, 6000000, 9000000, 8000000],
-    },
-  ],
-  chart: {
-    height: 350,
-    type: "area",
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  stroke: {
-    curve: "smooth",
-  },
-  xaxis: {
-    categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sept",
-        "Oct",
-        "Nov",
-        "Des",
-    ],
-  },
-  yaxis: {
-    title: {
-        text: "Pendapatan",
-    },
-  },
-};
+                <div class="row" >
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="/assets/img/firman.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                            <div class="member-content">
+                                <h4>Firman Ahmad Bayumi</h4>
+                                <span>Web Development</span>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="/assets/img/annisa.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                            <div class="member-content">
+                                <h4>Annisa Nur Fadhilah</h4>
+                                <span>Marketing</span>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-</script>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="/assets/img/naufal.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                            <div class="member-content">
+                                <h4>Naufal Elliando Fatahilla</h4>
+                                <span>Content</span>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Trainers Section -->
+</main>
 
 <footer id="footer">
 

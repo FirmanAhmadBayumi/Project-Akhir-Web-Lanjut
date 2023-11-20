@@ -62,34 +62,31 @@
 
     <!-- ======= Hero Section ======= -->
    <br><br><br><br><br><br><br>
-   
-   <main id="main" >
-    <a href="tarif/tambah" class="btn btn-primary" style="position: absolute;top:12%;left:17%;">TAMBAH TARIF</a>
-        <div class="container d-flex align-items-center flex-column">
-        
-        <?php foreach($data as $dt):?>
-                <div class="d-flex " style="margin-bottom:3%;width:80%;height:30vh;background:white;position:relative;padding-left:10%;padding-top:1%;padding-bottom:1%;border-radius:50px;border:1px solid black;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                    <img style="width:227px;height:200px;object-fit:fill;"src="../<?= $dt['foto']; ?>"/>
-                    <div class="title-card d-flex justify-content-center align-items-center flex-column text-dark" style="background-color: none;width:30%;height:100%;">
-                    <h1> <?= $dt['jenis']; ?></h1>
-                    <h1 class="inline-flex">Rp <?= number_format(intval($dt['harga']), 0, '.', '.'); ?></h1>
-                    </div>
-                    <style>
-                    .btn-custom{
-                        background:black;
-                    }
-                    </style>
-                    <div class="button-group position-absolute d-flex flex-column justify-content-around" style="height:80%;right:10%;">
-                        <a class="btn btn-custom" href="tarif/edit/<?= $dt['id']?>" style="background:#BCBCBC;color:white;">EDIT</a>
-                        <a class="btn btn-danger" href="tarif/delete/<?= $dt['id']?>">HAPUS</a>
-                    </div>
+<!-- Page Content  -->
+<div id="content" class="p-4 p-md-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <h3 align="center">CareWash</h3>
+    </nav>
+    <hr>
+
+    <div class="card">
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="post" action="#">
+                <div class="form-group">
+                    <label for="jenis_kendaraan">Nama</label>
+                    <input type="text" class="form-control" id="jenis_kendaraan" name="nama">
                 </div>
-                <?php endforeach; ?>
+                <div class="d-flex align-items-center">
+                    <a href="tarif_harga.php" class="btn btn-danger mr-2">Batal</a>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
         </div>
-</main>
+    </div>
 
+</div>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor-1 JS Files -->
