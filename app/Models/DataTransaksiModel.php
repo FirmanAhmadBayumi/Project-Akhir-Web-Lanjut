@@ -41,8 +41,19 @@ class DataTransaksiModel extends Model
     public function saveDataTransaksi($data){
         $this->insert($data);
     }
+
+     public function getDataTransaksiById($id)
+    {
+        return $this->select('data_transaksi.*')->where('id', $id)->first();
+    }
+
     public function getDataTransaksi(){
         return $this->select('data_transaksi.*, area_pencucian.area_pencucian')
             ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->findAll();
+    }
+
+     public function updateDataTransaksi($id, $data)
+    {
+        return $this->update($id, $data);
     }
 }
