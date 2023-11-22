@@ -77,40 +77,45 @@
                     <div class="card-header py-3 ">
                         <table style="width:100%">
                             <tr>
+                                <td>Data Pelanggan</td>
                             </tr>
                         </table>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Jenis Kelamin </th>
-                                        <th>Alamat</th>
-                                        <th>No. Ponsel</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
                                 <tbody>
-                                    <?php foreach($data_pelanggan as $pelanggan): ?>
-                                    <tr>
-                                        <td><?= $pelanggan['id'] ?></td>
-                                        <td><?= $pelanggan['nama'] ?></td>
-                                        <td><?= $pelanggan['jenis_kelamin'] ?></td>
-                                        <td><?= $pelanggan['alamat'] ?></td>
-                                        <td><?= $pelanggan['no_hp'] ?></td>
-                                        <td>
-                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan['id'].'/edit') ?>"
-                                                class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan['id'].'/delete') ?>"
-                                                class="btn btn-sm btn-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach ?>
+                                    <form action="" method="post" id="text-editor">
+                                        <input type="hidden" name="id" value="<?= $pelanggan['id'] ?>" />
+                                        <div class="form-group">
+                                            <label for="nama">Nama</label>
+                                            <input type="text" name="nama" class="form-control"
+                                                placeholder="Masukkan nama" value="<?= $pelanggan['nama'] ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                                            <input type="text" name="jenis_kelamin" class="form-control"
+                                                placeholder="Masukkan jenis kelamin"
+                                                value="<?= $pelanggan['jenis_kelamin'] ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="alamat">Alamat</label>
+                                            <input type="text" name="alamat" class="form-control"
+                                                placeholder="Masukkan alamat" value="<?= $pelanggan['alamat'] ?>"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="no_hp">No HP</label>
+                                            <input type="text" name="no_hp" class="form-control"
+                                                placeholder="Masukkan no hp" value="<?= $pelanggan['no_hp'] ?>"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="status" value="published"
+                                                class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </form>
                                 </tbody>
-
                             </table>
                         </div>
                     </div>

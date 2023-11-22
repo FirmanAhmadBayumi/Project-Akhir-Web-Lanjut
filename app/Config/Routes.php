@@ -52,8 +52,17 @@ $routes->get('pelanggan/riwayat_transaksi', [PelangganController::class, 'showRi
 
 //admin
 $routes->get('/admin/dashboard', 'AdminController::dashboard');
-$routes->get('/admin/datapelanggan', 'AdminController::datapelanggan');
 $routes->get('/admin/datatransaksi', 'AdminController::datatransaksi');
+$routes->get('/admin/datatransaksi/(:any)/edit', 'AdminController::editDataTransaksi/$1');
+$routes->post('/admin/datatransaksi/(:any)', 'AdminController::updateDataTransaksi/$1');
+$routes->get('/admin/datatransaksi/(:any)/delete', 'AdminController::deleteDataTransaksi/$1');
 $routes->get('/admin/pesanan', 'AdminController::pesanan');
 $routes->get('/admin/pembayaran', 'AdminController::pembayaran');
 $routes->get('/admin/laporan', 'AdminController::laporan');
+
+$routes->group('admin', function($routes){
+	$routes->get('datapelanggan', 'AdminController::datapelanggan');
+    $routes->add('datapelanggan/new', 'AdminController::create');
+	$routes->add('datapelanggan/(:segment)/edit', 'AdminController::edit/$1');
+	$routes->get('datapelanggan/(:segment)/delete', 'AdminController::delete/$1');
+});
