@@ -52,6 +52,7 @@
                 <ul>
                     <li><a href="dashboard">Laporan Keuangan</a></li>
                     <li><a href="tarif">Tarif Harga</a></li>
+                    <li><a href="area">Area Pencuician</a></li>
                     <li><a href="logout">Keluar</a></li>
                    
                 </ul>
@@ -61,13 +62,17 @@
 
     <!-- ======= Hero Section ======= -->
    <br><br><br><br><br><br><br>
+   
    <main id="main" >
-        <div class="container d-flex justify-content-center">
-                <div class="d-flex" style="width:80%;height:30vh;background:white;position:relative;padding-left:10%;padding-top:1%;padding-bottom:1%;border-radius:50px;border:1px solid black;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-                    <img src="/assets/img/motor-matic.jpeg"/>
-                    <div class="title-card d-flex justify-content-center align-items-center flex-column text-dark" style="background-color: none;width:20%;height:100%;">
-                    <h1>Scooter</h1>
-                    <h1>20.000</h1>
+    <a href="tarif/tambah" class="btn btn-primary" style="position: absolute;top:12%;left:17%;">TAMBAH TARIF</a>
+        <div class="container d-flex align-items-center flex-column">
+        
+        <?php foreach($data as $dt):?>
+                <div class="d-flex " style="margin-bottom:3%;width:80%;height:30vh;background:white;position:relative;padding-left:10%;padding-top:1%;padding-bottom:1%;border-radius:50px;border:1px solid black;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <img style="width:227px;height:200px;object-fit:fill;"src="../<?= $dt['foto']; ?>"/>
+                    <div class="title-card d-flex justify-content-center align-items-center flex-column text-dark" style="background-color: none;width:30%;height:100%;">
+                    <h1> <?= $dt['jenis_kendaraan']; ?></h1>
+                    <h1 class="inline-flex">Rp <?= number_format(intval($dt['harga']), 0, '.', '.'); ?></h1>
                     </div>
                     <style>
                     .btn-custom{
@@ -75,10 +80,11 @@
                     }
                     </style>
                     <div class="button-group position-absolute d-flex flex-column justify-content-around" style="height:80%;right:10%;">
-                        <a class="btn btn-custom" href="#" style="background:#BCBCBC;color:white;">EDIT</a>
-                        <a class="btn btn-danger" href="#">HAPUS</a>
+                        <a class="btn btn-custom" href="tarif/edit/<?= $dt['id']?>" style="background:#BCBCBC;color:white;">EDIT</a>
+                        <a class="btn btn-danger" href="tarif/delete/<?= $dt['id']?>">HAPUS</a>
                     </div>
                 </div>
+                <?php endforeach; ?>
         </div>
 </main>
 

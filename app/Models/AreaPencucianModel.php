@@ -37,14 +37,30 @@ class AreaPencucianModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function saveAreaPencucian($data){
-        $this->insert($data);
+    public function getAllAreaPencucian()
+    {
+        return $this->findAll();
     }
-    public function getAreaPencucian($id){
-        if($id != null){
-            return $this->select('area_pencucian.*')->find($id);
-        }
-        return $this->select('area_pencucian.*')->findAll();
+
+    public function getAreaPencucianById($id)
+    {
+        return $this->find($id);
+    }
+
+    public function createAreaPencucian($data)
+    {
+        return $this->insert($data);
+    }
+
+    public function updateAreaPencucian($id, $data)
+    {
+        return $this->update($id, $data);
+    }
+
+    public function deleteAreaPencucian($id)
+    {
+        return $this->delete($id);
     }
 }
+
+

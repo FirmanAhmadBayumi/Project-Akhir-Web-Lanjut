@@ -53,7 +53,7 @@
                     <li><a href="../dashboard">Laporan Keuangan</a></li>
                     <li><a href="../tarif">Tarif Harga</a></li>
                     <li><a href="../area">Area Pencuician</a></li>
-                    <li><a href="../logout">Keluar</a></li>
+                    <li><a href="logout">Keluar</a></li>
                    
                 </ul>
             </nav><!-- .navbar -->
@@ -73,19 +73,11 @@
         <div class="card-body">
             <form enctype="multipart/form-data" method="post" action="#">
                 <div class="form-group">
-                    <label for="jenis_kendaraan">Jenis Kendaraan</label>
-                    <input type="text" class="form-control" id="jenis_kendaraan" name="jenis_kendaraan">
-                </div>
-                <div class="form-group">
-                    <label for="harga">Harga</label>
-                    <input type="text" class="form-control" id="harga" name="harga">
-                </div>
-                <div class="form-group">
-                    <label for="gambar">Gambar</label>
-                    <input type="file" class="form-control" id="gambar" name="gambar">
+                    <label for="jenis_kendaraan">Nama</label>
+                    <input type="text" class="form-control" id="jenis_kendaraan" name="nama">
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="../../tarif" class="btn btn-danger mr-2 m-3">Batal</a>
+                    <a href="../../area" class="btn btn-danger mr-2">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>

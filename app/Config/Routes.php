@@ -24,9 +24,17 @@ $routes->get('/', 'Home::dashboard');
 //pemilik usaha
 $routes->get('pemilikusaha/dashboard', [Pemilik::class,'dashboard']);
 $routes->get('pemilikusaha/tarif', [Pemilik::class,'tarif']);
+$routes->get('pemilikusaha/tarif/tambah', [Pemilik::class,'tarifTambah']);
+$routes->post('pemilikusaha/tarif/tambah', [Pemilik::class,'tarifTambah']);
+$routes->get('pemilikusaha/tarif/delete/(:any)', [Pemilik::class,'tarifDelete']);
+$routes->get('pemilikusaha/area/delete/(:any)', [Pemilik::class,'areaDelete']);
+$routes->get('pemilikusaha/tarif/edit/(:any)', [Pemilik::class,'tarifEdit']);
+$routes->post('pemilikusaha/tarif/edit/(:any)', [Pemilik::class,'tarifEdit']);
 $routes->get('pemilikusaha/detail', [Pemilik::class,'detail']);
-
-//pelanggan hal. dashboard
+$routes->get('pemilikusaha/area', [Pemilik::class,'area']);
+$routes->get('pemilikusaha/area/tambah', [Pemilik::class,'areaTambah']);
+$routes->post('pemilikusaha/area/tambah', [Pemilik::class,'areaTambah']);
+//pelanggan
 $routes->get('pelanggan/dashboard', [PelangganController::class,'dashboard']);
 
 //data_pelanggan CRUD

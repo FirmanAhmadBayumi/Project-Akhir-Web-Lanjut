@@ -37,8 +37,31 @@ class PemilikUsahaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function getDataKendaraan(){
-        return $this->select('data_kendaraan.*')->findAll();
+    
+    public function getAllPemilik()
+    {
+        return $this->findAll();
     }
+
+    public function getPemilikById($id)
+    {
+        return $this->find($id);
+    }
+
+    public function createPemilik($data)
+    {
+        return $this->insert($data);
+    }
+
+    public function updatePemilik($id, $data)
+    {
+        return $this->update($id, $data);
+    }
+
+    public function deletePemilik($id)
+    {
+        return $this->delete($id);
+    }
+
+
 }
