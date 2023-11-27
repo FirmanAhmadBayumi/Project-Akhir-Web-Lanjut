@@ -8,8 +8,8 @@
         <h2>Motor Mu Butuh Lebih dari Sekedar Cucian, Ia Membutuhkan Perawatan Terbaik Untuk Selalu Tampil Optimal
             dan Bertahan Lama - Pilihlah Cucian Motor Kami, Karena Kami Mengerti dan Peduli akan Kebutuhan Motor
             Mu."</h2>
-        <a href="/masuk" class="btn-get-started">Masuk</a>
-        <a href="/daftar" class="btn-get-started mx-2">Daftar</a>
+        <a href="<?= url_to('login') ?>" class="btn-get-started">Masuk</a>
+        <a href="<?= url_to('register') ?>" class="btn-get-started mx-2">Daftar</a>
     </div>
 </section><!-- End Hero -->
 
@@ -100,21 +100,17 @@
             </div>
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-
+                
+                <?php foreach ($data_kendaraan as $item) { ?>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="course-item">
-                        <img src="assets/img/motor-bebek.jpeg" class="img-fluid" alt="...">
+                        <img src="<?= $item['foto'] ?>" class="img-fluid" alt="...">
                         <div class="course-content">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Motor Bebek (Cub)</h4>
-                                <p class="price">Rp. 15.000</p>
+                                <h4>
+                                Motor <?= $item['jenis_kendaraan'] ?>
+                                </h4>
                             </div>
-
-                            <h3><a href="course-details.html"></a></h3>
-                            <p>Kami adalah ahli dalam merawat sepeda Motor Bebek. Tim kami memahami kebutuhan
-                                khusus jenis kendaraan ini dan memberikan perawatan yang sesuai.
-                                <br><br><br><br><br><br>
-                            </p>
                             <div class="trainer d-flex justify-content-between align-items-center">
                                 <div class="trainer-profile d-flex align-items-center">
                                 </div>
@@ -127,63 +123,7 @@
                         </div>
                     </div>
                 </div> <!-- End Course Item-->
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <div class="course-item">
-                        <img src="assets/img/motor-matic.jpeg" class="img-fluid" alt="...">
-                        <div class="course-content">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Motor Matic (Scooter)</h4>
-                                <p class="price">Rp. 20.000</p>
-                            </div>
-                            <h3><a href="course-details.html"></a></h3>
-                            <p>Kami adalah ahli dalam merawat Motor Matic. Tim kami memiliki pemahaman mendalam
-                                tentang karakteristik dan kebutuhan unik dari jenis kendaraan ini.
-                                Peralatan dan Bahan Khusus: Kami menggunakan peralatan dan bahan pembersih yang
-                                dikhususkan untuk Motor Matic, memastikan penampilan terbaik dan perlindungan bagi
-                                komponen unik Motor Matic.
-                                <br><br>
-                            </p>
-                            <div class="trainer d-flex justify-content-between align-items-center">
-                                <div class="trainer-profile d-flex align-items-center">
-                                </div>
-                                <div class="trainer-rank d-flex align-items-center">
-                                    <i class="bx bx-user"></i>&nbsp;35
-                                    &nbsp;&nbsp;
-                                    <i class="bx bx-heart"></i>&nbsp;42
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Course Item-->
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                    <div class="course-item">
-                        <img src="assets/img/motor-laki.jpeg" class="img-fluid" alt="...">
-                        <div class="course-content">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Motor Laki (Sport-Bike)</h4>
-                                <p class="price">Rp. 45.000</p>
-                            </div>
-                            <p>Kami menggunakan peralatan dan bahan pembersih yang dikhususkan untuk Motor Laki,
-                                memastikan penampilan terbaik dan perlindungan bagi komponen unik Motor Laki. Selain
-                                mencuci, kami memberikan perawatan tambahan yang
-                                meliputi pengecekan komponen khusus seperti suspensi, rem, rangka, dan mesin sport
-                                bike.
-                                <br><br>
-                            </p>
-                            <div class="trainer d-flex justify-content-between align-items-center">
-                                <div class="trainer-profile d-flex align-items-center">
-                                </div>
-                                <div class="trainer-rank d-flex align-items-center">
-                                    <i class="bx bx-user"></i>&nbsp;20
-                                    &nbsp;&nbsp;
-                                    <i class="bx bx-heart"></i>&nbsp;85
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Course Item-->
+                <?php } ?>
 
             </div>
 
@@ -197,7 +137,7 @@
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/firman.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                        <img src="<?=base_url('../assets/img/firman.jpeg')?>" class="img-fluid" alt="" style="width: 300px; height: 358px;">
                         <div class="member-content">
                             <h4>Firman Ahmad Bayumi</h4>
                             <span>Web Development</span>
@@ -213,7 +153,7 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/annisa.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                        <img src="<?= base_url('assets/img/annisa.jpeg')?>" class="img-fluid" alt="" style="width: 300px; height: 358px;">
                         <div class="member-content">
                             <h4>Annisa Nur Fadhilah</h4>
                             <span>Marketing</span>
@@ -229,7 +169,7 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <img src="assets/img/naufal.jpeg" class="img-fluid" alt="" style="width: 300px; height: 358px;">
+                        <img src="<?= base_url('../assets/img/naufal.jpeg')?>" class="img-fluid" alt="" style="width: 300px; height: 358px;">
                         <div class="member-content">
                             <h4>Naufal Elliando Fatahilla</h4>
                             <span>Content</span>

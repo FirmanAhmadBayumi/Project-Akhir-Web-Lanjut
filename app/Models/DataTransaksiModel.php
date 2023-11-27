@@ -38,11 +38,18 @@ class DataTransaksiModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function saveDataTransaksi($data){
+    //punya firman
+    public function saveDataTransaksi($data) {
         $this->insert($data);
     }
+    public function getDataTransaksiPelanggan() {
+        return $this->select('data_transaksi.*, area_pencucian.area_pencucian')
+            ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->
+            orderBy('data_transaksi.id')->findAll();
+    }
+    //bates punya firman
 
-     public function getDataTransaksiById($id)
+    public function getDataTransaksiById($id)
     {
         return $this->select('data_transaksi.*')->where('id', $id)->first();
     }
@@ -52,7 +59,7 @@ class DataTransaksiModel extends Model
             ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->findAll();
     }
 
-     public function updateDataTransaksi($id, $data)
+    public function updateDataTransaksi($id, $data)
     {
         return $this->update($id, $data);
     }

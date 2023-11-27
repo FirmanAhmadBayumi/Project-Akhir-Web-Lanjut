@@ -37,7 +37,12 @@ class PemilikUsahaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-    
+
+    //punya firman utk nampilin data kendaraan (nama,jenis,harga)
+    public function getDataKendaraan() {
+        return $this->select('data_kendaraan.*')->findAll();
+    }
+    //bates pnya firman
     public function getAllPemilik()
     {
         return $this->findAll();

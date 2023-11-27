@@ -23,7 +23,7 @@ class PelangganController extends BaseController
     }
 
     //dibawah ini fungsi utuk menampilkan halaman dashboard
-    public function dashboard(){
+    public function index(){
         $data = [
             'title' => 'Beranda',
         ];
@@ -82,7 +82,7 @@ class PelangganController extends BaseController
         return redirect()->to('/pelanggan/profil');
     }
     public function editDataPelanggan($id){
-        $data_pelanggan = $this->dataPelanggan->getDataPelanggan();
+        $data_pelanggan = $this->dataPelanggan->getDataPelangganID();
 
         $data = [
             'title' => 'Edit Profile',
@@ -99,7 +99,7 @@ class PelangganController extends BaseController
             'no_hp' => $this->request->getVar('no_hp'),
         ];
 
-        $result = $this->dataPelanggan->updateDataPelanggan($id, $data);
+        $result = $this->dataPelanggan->updateDataPelangganControl($id, $data);
 
         if (
             !$this->validate([
@@ -143,7 +143,7 @@ class PelangganController extends BaseController
     }
     public function showProfilPelanggan()
     {
-        $data_pelanggan = $this->dataPelanggan->getDataPelanggan();
+        $data_pelanggan = $this->dataPelanggan->getDataPelangganID();
 
         $data = [
             'title' => 'Profil',
@@ -203,7 +203,7 @@ class PelangganController extends BaseController
         return redirect()->to('pelanggan/riwayat_transaksi');
     }
     public function showRiwayatTransaksi(){
-        $data_transaksi = $this->dataTransaksi->getDataTransaksi();
+        $data_transaksi = $this->dataTransaksi->getDataTransaksiPelanggan();
 
         $data =  [
             'title' => 'Riwayat Transaksi',

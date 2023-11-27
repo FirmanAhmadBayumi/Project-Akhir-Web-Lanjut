@@ -28,28 +28,52 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('<?= base_url('login/images/bg-motor1.jpg') ?>');">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+
+                <?= view('App\Views\Auth\_message_block') ?>
+
+                <form class="login100-form validate-form" action="<?= url_to('register') ?>" method="post">
+                    <?= csrf_field() ?>
 
                     <span class="login100-form-title p-b-34 p-t-27">
-                        Daftar
+                        <?= lang('Auth.register') ?>
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Masukkan Nama Pengguna">
-                        <input class="input100" type="text" name="username" placeholder="Nama Pengguna">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
+                    <div class="wrap-input100 validate-input">
+                            <input type="email" class="input100 <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
+                                name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" 
+                                value="<?= old('email') ?>">
+                            <span class="focus-input100" data-placeholder="&#x1F4E7;">
+                        </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Masukkan Kata Sandi">
-                        <input class="input100" type="password" name="pass" placeholder="Kata Sandi">
-                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                    </div>
+                        <div class="wrap-input100 validate-input">
+                            <input type="text" class="input100 <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" 
+                                name="username" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
+                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                        </div>
 
-                    <div class="container-login100-form-btn">
-                        <a href="">
-                            <button class="login100-form-btn">Daftar</button>
-                        </a>
-                    </div>
+                        <div class="wrap-input100 validate-input">
+                            <input type="password" class="input100 <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" 
+                                name="password" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input">
+                            <input type="password" class="input100 <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" 
+                                name="pass_confirm" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
+                            <span class="focus-input100" data-placeholder="&#x1F501;"></span>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <button type="submit" class="login100-form-btn"><?= lang('Auth.register') ?></button>
+                        </div>
                 </form>
+
+                <div class="text-center mt-3">
+                        <a class="txt1" href="<?= url_to('login') ?>">
+                            <?= lang('Auth.alreadyRegistered') ?>
+                            <?= lang('Auth.signIn') ?>
+                        </a>
+                </div>
             </div>
         </div>
     </div>

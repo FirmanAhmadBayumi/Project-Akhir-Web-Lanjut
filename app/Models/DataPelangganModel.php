@@ -38,10 +38,18 @@ class DataPelangganModel extends Model
     protected $beforeDelete = [];
     protected $afterDelete = [];
 
-    public function saveDataPelanggan($data)
-    {
+    //punya firman untuk create sama edit pelanggan
+    public function saveDataPelanggan($data) {
         $this->insert($data);
     }
+    public function updateDataPelangganControl($id, $data) {
+        return $this->update($id, $data);
+    }
+    public function getDataPelangganID() {
+        return $this->select('data_pelanggan.*')->where('id', 1)->first();
+    }
+    //bates punya firman
+
     public function getDataPelangganById($id)
     {
         return $this->select('data_pelanggan.*')->where('id', $id)->first();
