@@ -29,35 +29,59 @@
     <div class="limiter">
         <div class="container-login100" style="background-image: url('<?= base_url('login/images/bg-motor1.jpg') ?>');">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+
+                <?= view('App\Views\Auth\_message_block') ?>
+
+                <form class="login100-form validate-form" action="<?= url_to('login') ?>" method="post">
+                    <?= csrf_field() ?>
 
                     <span class="login100-form-title p-b-34 p-t-27">
-                        Masuk
+                        <?= lang('Auth.loginTitle') ?>
                     </span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Masukkan Nama Pengguna">
-                        <input class="input100" type="text" name="username" placeholder="Nama Pengguna">
-                        <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                    </div>
+                    <?php if ($config->validFields === ['email']): ?>
+						<div class="wrap-input100 validate-input">
+							<input type="email" class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
+								name="login" placeholder="<?=lang('Auth.email')?>">
+                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+							<div class="invalid-feedback">
+								<?= session('errors.login') ?>
+							</div>
+						</div>
+                    <?php else: ?>
+						<div class="wrap-input100 validate-input">
+							<input type="text" class="input100 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"
+								name="login" placeholder="<?=lang('Auth.emailOrUsername')?>">
+                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+							<div class="invalid-feedback">
+								<?= session('errors.login') ?>
+							</div>
+						</div>
+                    <?php endif; ?>
 
-                    <div class="wrap-input100 validate-input" data-validate="Masukkan Kata Sandi">
-                        <input class="input100" type="password" name="pass" placeholder="Kata Sandi">
-                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                    </div>
+						<div class="wrap-input100 validate-input">
+							<input type="password" class="input100  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" 
+                                name="password" placeholder="<?=lang('Auth.password')?>">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+							<div class="invalid-feedback">
+								<?= session('errors.password') ?>
+							</div>
+						</div>
 
-                    <div class="container-login100-form-btn">
-                        <a href="">
-                            <button class="login100-form-btn">Masuk</button>
+                        <div class="container-login100-form-btn">
+						    <button type="submit" class="login100-form-btn"><?=lang('Auth.loginAction')?></button>
+                        </div>
+                </form>
+                <?php if($config->allowRegistration): ?>
+                    <div class="text-center mt-3">
+                        <a class="txt1" href="<?= url_to('register') ?>">
+                            <?= lang('Auth.needAnAccount') ?>
                         </a>
                     </div>
-                    </div>
-                </form>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-
-
-    <div id="dropDownSelect1"></div>
 
     <script src="vendor-login/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor-login/animsition/js/animsition.min.js"></script>

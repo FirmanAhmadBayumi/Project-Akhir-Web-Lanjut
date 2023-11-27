@@ -19,16 +19,17 @@
         rel="stylesheet">
 
     <!-- Vendor-1 CSS Files -->
-    <link href="assets/vendor-1/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor-1/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor-1/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor-1/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor-1/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor-1/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor-1/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+    <link href="<?= base_url('../assets/vendor-1/animate.css/animate.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/aos/aos.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/remixicon/remixicon.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/vendor-1/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url('../assets/css/style.css') ?>" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Mentor
