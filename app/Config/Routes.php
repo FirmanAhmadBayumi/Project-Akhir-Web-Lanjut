@@ -67,4 +67,5 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	$routes->get('detail', [Pemilik::class, 'detail'], ['filter' => 'role:super admin']);
 	$routes->get('area', [Pemilik::class, 'area'], ['filter' => 'role:super admin']);
 	$routes->get('area/tambah', [Pemilik::class, 'areaTambah'], ['filter' => 'role:super admin']);
+	$routes->post('area/tambah', [Pemilik::class, 'areaTambah'], ['filter' => 'role:super admin']);
 });
