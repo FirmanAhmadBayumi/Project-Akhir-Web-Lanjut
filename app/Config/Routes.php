@@ -26,8 +26,8 @@ $routes->group('pelanggan', ['filter' => 'role:pelanggan'], function($routes) {
 	$routes->get('create_data_pelanggan', [PelangganController::class, 'tambahDataPelanggan']); //hal. create data pelanggan
 	$routes->post('data_pelanggan', [PelangganController::class, 'createDataPelanggan']); //proses pengiriman data pelanggan ke db
 	$routes->get('profil/(:any)/edit', [PelangganController::class, 'editDataPelanggan']); //halaman proses edit data
-	$routes->put('profil/(:any)', [PelangganController::class, 'updateDataPelanggan']); //proses edit/update data
-	$routes->get('profil', [PelangganController::class, 'showProfilPelanggan']); //read data pelanggan
+	$routes->put('profil/(:any)', [PelangganController::class, 'editProfil']); //proses edit/update data
+	$routes->get('profil', [PelangganController::class, 'showProfil']); //read data pelanggan
 
 	//data_transaksi pelanggan CRUD
 	$routes->get('pesan', [PelangganController::class, 'pesan']); //halaman jenis kendaraan

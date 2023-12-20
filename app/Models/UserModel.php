@@ -14,7 +14,7 @@ class UserModel extends Model
 {
     protected $table          = 'users';
     protected $primaryKey     = 'id';
-    protected $returnType     = 'App\Entities\User';
+    protected $returnType     = 'array';
     protected $useSoftDeletes = true;
     protected $allowedFields  = [
         'email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
@@ -41,6 +41,24 @@ class UserModel extends Model
     /**
      * Logs a password reset attempt for posterity sake.
      */
+
+    public function getIdUser($id)
+    {
+        return $this->select('users.*')
+            ->find($id);
+    }
+
+    public function getDataPelanggan($id)
+    {
+        return $this->select('users.*')->find($id);
+    }
+
+    public function updateDataPelanggan($id, $data)
+    {
+        // dd($data);
+        return $this->update($id, $data);
+    }
+
     public function logResetAttempt(string $email, ?string $token = null, ?string $ipAddress = null, ?string $userAgent = null)
     {
         $this->db->table('auth_reset_attempts')->insert([

@@ -28,16 +28,20 @@
                                 <span>Harga: Rp.
                                     <?= $item['harga'] ?>
                                 </span>
-                                <a href="<?= base_url('pelanggan/pesan/detail_pesanan?jenis_kendaraan=' . urlencode($item['jenis_kendaraan']) . '&harga=' . urlencode($item['harga'])) ?>"
-                                    class="mt-3 btn btn-success btn-get-started">
-                                    Pesan Sekarang
+                                <a href="<?= base_url('pelanggan/pesan/detail_pesanan?jenis_kendaraan=' . 
+                                        urlencode($item['jenis_kendaraan']) . 
+                                        '&harga=' . urlencode($item['harga']) . 
+                                        '&username=' . urlencode($data_pelanggan['username']) .
+                                        '&id=' . urlencode($data_pelanggan['id'])) ?>"
+                                        class="mt-3 btn btn-success btn-get-started">
+                                        Pesan Sekarang
                                 </a>
-                                </div>
                             </div>
                         </div>
+                    </div>
                 <?php } ?>
-                </div>
             </div>
+        </div>
     </section><!-- End Trainers Section -->
 
 </main><!-- End #main -->

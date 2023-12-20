@@ -7,6 +7,7 @@ use App\Models\AreaPencucianModel;
 use App\Models\DataPelangganModel;
 use App\Models\DataTransaksiModel;
 use App\Models\PemilikUsahaModel;
+use App\Models\UserModel;
 
 class PelangganController extends BaseController
 {
@@ -17,7 +18,7 @@ class PelangganController extends BaseController
     public $dataTransaksi;
     public function __construct(){
         $this->areaPencucian = new AreaPencucianModel();
-        $this->dataPelanggan = new DataPelangganModel();
+        $this->dataPelanggan = new UserModel();
         $this->dataKendaraan = new PemilikUsahaModel();
         $this->dataTransaksi = new DataTransaksiModel();
     }
@@ -39,95 +40,81 @@ class PelangganController extends BaseController
         return view('pelanggan/create_data_pelanggan', $data);
 
     }
-    public function createDataPelanggan(){
-        if (
-            !$this->validate([
-                'nama' => [
-                    'rules' => 'required|alpha_space',
-                    'errors' => [
-                        'required' => 'Nama Harus Diisi !',
-                        'alpha_space' => 'Nama Harus Diisi Huruf dan Spasi'
-                    ]
-                ],
-                'jk' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Jenis Kelamin Harus Dipilih!',
-                    ]
-                ],
-                'alamat' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Alamat Harus Diisi !',
-                    ]
-                ],
-                'no_hp' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'No. Ponsel Harus Diisi !'
-                    ]
-                ]
-            ])
-        ) {
-            session()->setFlashdata($this->validator->getErrors());
-            return redirect()->back()->withInput();
-        }
+    // public function createDataPelanggan(){
+    //     if (
+    //         !$this->validate([
+    //             'nama' => [
+    //                 'rules' => 'required|alpha_space',
+    //                 'errors' => [
+    //                     'required' => 'Nama Harus Diisi !',
+    //                     'alpha_space' => 'Nama Harus Diisi Huruf dan Spasi'
+    //                 ]
+    //             ],
+    //             'jk' => [
+    //                 'rules' => 'required',
+    //                 'errors' => [
+    //                     'required' => 'Jenis Kelamin Harus Dipilih!',
+    //                 ]
+    //             ],
+    //             'alamat' => [
+    //                 'rules' => 'required',
+    //                 'errors' => [
+    //                     'required' => 'Alamat Harus Diisi !',
+    //                 ]
+    //             ],
+    //             'no_hp' => [
+    //                 'rules' => 'required',
+    //                 'errors' => [
+    //                     'required' => 'No. Ponsel Harus Diisi !'
+    //                 ]
+    //             ]
+    //         ])
+    //     ) {
+    //         session()->setFlashdata($this->validator->getErrors());
+    //         return redirect()->back()->withInput();
+    //     }
         
-        $this->dataPelanggan->saveDataPelanggan([
-            'nama' => $this->request->getVar('nama'),
-            'jenis_kelamin' => $this->request->getVar('jk'),
-            'alamat' => $this->request->getVar('alamat'),
-            'no_hp' => $this->request->getVar('no_hp'),
-        ]);
-        return redirect()->to('/pelanggan/profil');
-    }
+    //     $this->dataPelanggan->saveDataPelanggan([
+    //         'nama' => $this->request->getVar('nama'),
+    //         'jenis_kelamin' => $this->request->getVar('jk'),
+    //         'alamat' => $this->request->getVar('alamat'),
+    //         'no_hp' => $this->request->getVar('no_hp'),
+    //     ]);
+    //     return redirect()->to('/pelanggan/profil');
+    // }
     public function editDataPelanggan($id){
-        $data_pelanggan = $this->dataPelanggan->getDataPelangganID();
+        $data_pelanggan = $this->dataPelanggan->getDataPelanggan($id);
 
         $data = [
             'title' => 'Edit Profile',
             'data_pelanggan' => $data_pelanggan,
         ];
 
-        return view('pelanggan/edit_data_pelanggan', $data);
+        return view('pelanggan/edit_profil', $data);
     }
-    public function updateDataPelanggan($id){
+    public function editProfil($id){
         $data = [
-            'nama' => $this->request->getVar('nama'),
-            'jenis_kelamin' => $this->request->getVar('jk'),
-            'alamat' => $this->request->getVar('alamat'),
-            'no_hp' => $this->request->getVar('no_hp'),
+            'username' => $this->request->getVar('username'),
+            'email' => $this->request->getVar('email'),
         ];
 
-        $result = $this->dataPelanggan->updateDataPelangganControl($id, $data);
+        $result = $this->dataPelanggan->updateDataPelanggan($id, $data);
 
         if (
             !$this->validate([
-                'nama' => [
-                    'rules' => 'required|alpha_space',
+                'email' => [
+                    'rules' => 'required|valid_email',
                     'errors' => [
-                        'required' => 'Nama Harus Diisi !',
-                        'alpha_space' => 'Nama Harus Diisi Huruf dan Spasi'
+                        'required' => 'Email harus diisi!',
+                        'valid_email' => 'Isi format email dengan benar!'
                     ]
                 ],
-                'jk' => [
+                'username' => [
                     'rules' => 'required',
                     'errors' => [
-                        'required' => 'Jenis Kelamin Harus Dipilih!',
+                        'required' => 'Username harus diisi !'
                     ]
                 ],
-                'alamat' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'Alamat Harus Diisi !',
-                    ]
-                ],
-                'no_hp' => [
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => 'No. Ponsel Harus Diisi !'
-                    ]
-                ]
             ])
         ) {
             session()->setFlashdata($this->validator->getErrors());
@@ -141,9 +128,9 @@ class PelangganController extends BaseController
 
         return redirect()->to(base_url('pelanggan/profil'));
     }
-    public function showProfilPelanggan()
+    public function showProfil()
     {
-        $data_pelanggan = $this->dataPelanggan->getDataPelangganID();
+        $data_pelanggan = $this->dataPelanggan->getIdUser(user_id());
 
         $data = [
             'title' => 'Profil',
@@ -159,9 +146,11 @@ class PelangganController extends BaseController
     public function pesan()
     {
         $data_kendaraan = $this->dataKendaraan->getDataKendaraan();
+        $data_pelanggan = $this->dataPelanggan->getIdUser(user_id());
         $data = [
             'title' => 'Pesanan',
             'data_kendaraan' => $data_kendaraan,
+            'data_pelanggan' => $data_pelanggan,
         ];
         return view("pelanggan/pesan", $data);
     }
@@ -190,7 +179,9 @@ class PelangganController extends BaseController
         return view("pelanggan/detail_pesanan", $data);
     }
     public function createDataTransaksi(){
+        
         $this->dataTransaksi->saveDataTransaksi([
+            "id_user" =>    $this->request->getvar("id"),
             "nama" => $this->request->getVar("nama"),
             "alamat" => $this->request->getVar("alamat"),
             "tgl_pemesanan" => $this->request->getVar("tgl"),
@@ -203,7 +194,7 @@ class PelangganController extends BaseController
         return redirect()->to('pelanggan/riwayat_transaksi');
     }
     public function showRiwayatTransaksi(){
-        $data_transaksi = $this->dataTransaksi->getDataTransaksiPelanggan();
+        $data_transaksi = $this->dataTransaksi->getDataTransaksiPelangganByIdUser(user_id());
 
         $data =  [
             'title' => 'Riwayat Transaksi',
