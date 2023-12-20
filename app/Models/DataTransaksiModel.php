@@ -12,7 +12,7 @@ class DataTransaksiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'alamat', 'tgl_pemesanan', 'jenis_motor', 'id_area_pencucian', 'harga', 'jns_pembayaran'];
+    protected $allowedFields    = ['id_user', 'nama', 'alamat', 'tgl_pemesanan', 'jenis_motor', 'id_area_pencucian', 'harga', 'jns_pembayaran'];
 
     // Dates
     protected $useTimestamps = false;
@@ -42,10 +42,18 @@ class DataTransaksiModel extends Model
     public function saveDataTransaksi($data) {
         $this->insert($data);
     }
-    public function getDataTransaksiPelanggan() {
+    // public function getDataTransaksiPelanggan() {
+    //     return $this->select('data_transaksi.*, area_pencucian.area_pencucian')
+    //         ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->
+    //         orderBy('data_transaksi.id')->findAll();
+    // }
+    public function getDataTransaksiPelangganByIdUser($id_user)
+    {
         return $this->select('data_transaksi.*, area_pencucian.area_pencucian')
-            ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')->
-            orderBy('data_transaksi.id')->findAll();
+                    ->join('area_pencucian', 'area_pencucian.id=data_transaksi.id_area_pencucian')
+                    ->where('id_user', $id_user)
+                    ->get()
+                    ->getResultArray();
     }
     //bates punya firman
 

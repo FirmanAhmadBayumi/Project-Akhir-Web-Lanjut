@@ -15,6 +15,11 @@ class CreateDataTransaksiTabel extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'id_user' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
+            ],
             'nama' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -60,6 +65,7 @@ class CreateDataTransaksiTabel extends Migration
         ]);
 
         $this->forge->addKey('id', true, true);
+        $this->forge->addForeignKey('id_user', 'users', 'id');
         $this->forge->addForeignKey('id_area_pencucian', 'area_pencucian', 'id');
         $this->forge->createTable('data_transaksi');
     }
