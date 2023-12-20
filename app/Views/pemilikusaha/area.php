@@ -49,14 +49,17 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
+            <nav id="navbar" class="navbar order-last order-lg-0" style="margin-right:20px;">
                 <ul>
             
                     <li><a href="dashboard">Laporan Keuangan</a></li>
                     <li><a href="tarif">Tarif Harga</a></li>
                     <li><a href="area">Area Pencuician</a></li>
                     <li><a href="../logout">Keluar</a></li>
-                
+                    <div class="" style="position:fixed;right:5px;font-family: 'Poppins', sans-serif;
+                    font-size: 15px;
+                    font-weight: 500;">Admin <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg></div>
+
                 </ul>
             </nav><!-- .navbar -->
         </div>
