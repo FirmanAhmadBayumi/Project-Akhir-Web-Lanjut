@@ -10,7 +10,11 @@ class Home extends BaseController
     public function __construct(){
         $this->dataKendaraan = new PemilikUsahaModel();
     }
-    public function index(): string{
+    public function index(){
+        if(in_groups("super admin")){
+            return redirect()->to(base_url('pemilikusaha/dashboard'));
+            }
+
         $data_kendaraan = $this->dataKendaraan->getDataKendaraan();
 
         $data = [

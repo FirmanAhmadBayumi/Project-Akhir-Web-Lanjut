@@ -15,7 +15,7 @@
                     <input type="text" class="form-control" id="jenis_kendaraan" name="nama" required>
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="../../area" class="btn btn-danger mr-2 m-3">Batal</a>
+                    <a href="<?= base_url('pemilikusaha/area');?>" class="btn btn-danger mr-2 m-3">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>

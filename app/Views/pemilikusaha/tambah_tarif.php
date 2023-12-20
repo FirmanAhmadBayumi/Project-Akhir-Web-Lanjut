@@ -23,7 +23,7 @@
                     <input type="file" class="form-control" id="gambar" name="gambar" required> 
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="../../tarif" class="btn btn-danger mr-2 m-3">Batal</a>
+                    <a href="<?= base_url('pemilikusaha/tarif');?>" class="btn btn-danger mr-2 m-3">Batal</a>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </form>
