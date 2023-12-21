@@ -62,4 +62,10 @@ class DataPelangganModel extends Model
     {
         return $this->update($id, $data);
     }
+
+    public function deletePelanggan($id)
+{
+    $this->userModel->delete($id);
+    return redirect()->to(base_url('admin/datapelanggan'));
+}
 }

@@ -53,9 +53,7 @@
                     <li><a href="dashboard">BERANDA</a></li>
                     <li><a href="datapelanggan">DATA PELANGGAN</a></li>
                     <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="kelolapesanan">PESANAN</a></li>
-                    <li><a href="pembayaransetuju">PEMBAYARAN</a></li>
-                    <li><a href="laporankeuangan">LAPORAN</a></li>
+                    <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>
@@ -86,29 +84,31 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Jenis Kelamin </th>
-                                        <th>Alamat</th>
-                                        <th>No. Ponsel</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($data_pelanggan as $pelanggan): ?>
+                                    <?php foreach($users as $pelanggan): ?>
                                     <tr>
-                                        <td><?= $pelanggan['id'] ?></td>
-                                        <td><?= $pelanggan['nama'] ?></td>
-                                        <td><?= $pelanggan['jenis_kelamin'] ?></td>
-                                        <td><?= $pelanggan['alamat'] ?></td>
-                                        <td><?= $pelanggan['no_hp'] ?></td>
+                                        <td><?= $pelanggan->id ?></td>
+                                        <td><?= $pelanggan->email ?></td>
+                                        <td><?= $pelanggan->username ?></td>
+
                                         <td>
-                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan['id'].'/edit') ?>"
-                                                class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan['id'].'/delete') ?>"
-                                                class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan->id.'/delete') ?>"
+                                                class="btn btn-sm btn-danger"
+                                                onclick="return confirmDelete()">Delete</a>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
+                                    <script>
+                                    function confirmDelete() {
+                                        return confirm("Are you sure you want to delete this customer?");
+                                    }
+                                    </script>
+
                                 </tbody>
 
                             </table>

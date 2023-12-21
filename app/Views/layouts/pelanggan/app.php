@@ -29,7 +29,7 @@
 </head>
 
 <body>
-        <!-- ======= Header ======= -->
+    <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
             <h1 class="logo me-auto"><a href="index.html">Care Wash</a></h1>
@@ -45,8 +45,11 @@
                             aria-expanded="false">PROFIL
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/create_data_pelanggan') ?>">Tambah Data Pelanggan</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/profil') ?>">Lihat Data Pelanggan</a></li>
+                            <li><a class="dropdown-item"
+                                    href="<?= base_url('/pelanggan/create_data_pelanggan') ?>">Tambah Data Pelanggan</a>
+                            </li>
+                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/profil') ?>">Lihat Data
+                                    Pelanggan</a></li>
                         </ul>
                     </li>
                     <li><a href="<?= base_url('logout') ?>">KELUAR</a></li>
@@ -143,10 +146,10 @@
     <script src="<?= base_url('../assets/vendor-1/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('../assets/vendor-1/swiper/swiper-bundle.min.js') ?>"></script>
     <script src="<?= base_url('../assets/vendor-1/php-email-form/validate.js') ?>"></script>
-    
+
     <!-- Template Main JS File -->
     <script src="<?= base_url('../assets/js/main.js') ?>"></script>
-    
-    </body>
-    
-    </html>
+
+</body>
+
+</html>

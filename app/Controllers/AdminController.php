@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\DataPelangganModel;
 use App\Models\DataTransaksiModel;
+use App\Models\UserModel;
 
 
 
@@ -12,25 +13,27 @@ class AdminController extends BaseController
 {
     protected $dataPelanggan;
     protected $dataTransaksi;
+    protected $users;
     public function __construct(){
         $this->dataPelanggan = new DataPelangganModel();
         $this->dataTransaksi = new DataTransaksiModel();
+        $this->users = new UserModel();
     }
     public function dashboard()
     {
         return view("admin/dashboard");
     }
-    public function datapelanggan()
-    {
-        $data_pelanggan = $this->dataPelanggan->getDataPelanggan();
+    // public function datapelanggan()
+    // {
+    //     $data_pelanggan = $this->dataPelanggan->getDataPelanggan();
 
-        $data = [
-            'title' => 'Data Pelanggan',
-            'data_pelanggan' => $data_pelanggan,
-        ];
+    //     $data = [
+    //         'title' => 'Data Pelanggan',
+    //         'data_pelanggan' => $data_pelanggan,
+    //     ];
 
-        return view("admin/datapelanggan", $data);
-    }
+    //     return view("admin/datapelanggan", $data);
+    // }
     
     public function create(){
         $validation =  \Config\Services::validation();
@@ -85,6 +88,7 @@ class AdminController extends BaseController
         $this->dataPelanggan->delete($id);
         return redirect()->to(base_url('admin/datapelanggan'));
     }
+    
     
     public function updateDataPelanggan($id){
         $data = [
@@ -255,9 +259,13 @@ class AdminController extends BaseController
 
 
     
-    public function pesanan()
+    public function pesanan($id)
     {
-        return view("admin/pesanan");
+        $data['transaksi'] = $this->dataTransaksi->where('id', $id)->first();
+
+        
+        return view("admin/kelolapesanan",$data);
+        
     }
     public function pembayaran()
     {
@@ -267,4 +275,13 @@ class AdminController extends BaseController
     {
         return view("admin/laporan");
     }
+
+      public function Users()
+    {
+         $data['users'] = $this->users->getAllUsersExceptOne();
+
+        return view("admin/datapelanggan", $data);
+    }
+
+
 }
