@@ -1,4 +1,4 @@
-<?= $this->extend('admin/layouts/app') ?>
+<?= $this->extend('layouts/pelanggan/app') ?>
 
 <?= $this->section('content') ?>
 <!-- ======= Hero Section ======= -->
