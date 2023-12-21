@@ -53,7 +53,7 @@
                     <li><a href="">Laporan Keuangan</a></li>
                     <li><a href="#about">Tarif Harga</a></li>
                     <li><a href="#trainers">Keluar</a></li>
-                   
+
                 </ul>
             </nav><!-- .navbar -->
         </div>

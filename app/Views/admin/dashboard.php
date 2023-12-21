@@ -26,7 +26,7 @@
     <link href="<?= base_url('../assets/vendor-1/remixicon/remixicon.css') ?>" rel="stylesheet">
     <link href="<?= base_url('../assets/vendor-1/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    
+
     <!-- Template Main CSS File -->
     <link href="<?= base_url('../assets/css/style.css') ?>" rel="stylesheet">
 
@@ -53,9 +53,6 @@
                     <li><a href="dashboard">BERANDA</a></li>
                     <li><a href="datapelanggan">DATA PELANGGAN</a></li>
                     <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="kelolapesanan">PESANAN</a></li>
-                    <li><a href="pembayaransetuju">PEMBAYARAN</a></li>
-                    <li><a href="mengelolatransaksi">LAPORAN</a></li>
                     <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
@@ -220,4 +217,3 @@
 </body>
 
 </html>
-

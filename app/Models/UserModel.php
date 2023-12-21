@@ -70,6 +70,11 @@ class UserModel extends Model
         ]);
     }
 
+public function getAllUsersExceptOne()
+{
+    return $this->where('id !=', 1)->findAll();
+}
+
     /**
      * Logs an activation attempt for posterity sake.
      */

@@ -53,9 +53,7 @@
                     <li><a href="dashboard">BERANDA</a></li>
                     <li><a href="datapelanggan">DATA PELANGGAN</a></li>
                     <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="kelolapesanan">PESANAN</a></li>
-                    <li><a href="pembayaransetuju">PEMBAYARAN</a></li>
-                    <li><a href="laporankeuangan">LAPORAN</a></li>
+                    <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>

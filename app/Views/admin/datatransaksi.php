@@ -18,17 +18,16 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <!-- Vendor-1 CSS Files -->
-    <link href="../assets/vendor-1/animate.css/animate.min.css" rel="stylesheet">
-    <link href="../assets/vendor-1/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor-1/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor-1/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor-1/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../assets/vendor-1/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../assets/vendor-1/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/animate.css/animate.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/aos/aos.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/remixicon/remixicon.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/vendor-1/swiper/swiper-bundle.min.css') ?>" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Mentor
@@ -53,9 +52,7 @@
                     <li><a href="dashboard">BERANDA</a></li>
                     <li><a href="datapelanggan">DATA PELANGGAN</a></li>
                     <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="kelolapesanan">PESANAN</a></li>
-                    <li><a href="pembayaransetuju">PEMBAYARAN</a></li>
-                    <li><a href="mengelolatransaksi">LAPORAN</a></li>
+                    <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>
@@ -110,10 +107,16 @@
                                     <a href="<?= base_url('admin/datatransaksi/'.$transaksi['id'].'/edit') ?>"
                                         class="btn btn-sm btn-warning">Edit</a>
                                     <a href="<?= base_url('admin/datatransaksi/'.$transaksi['id'].'/delete') ?>"
-                                        class="btn btn-sm btn-danger">Delete</a>
+                                        class="btn btn-sm btn-danger" onclick="return confirmDelete()">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
+
+                            <script>
+                            function confirmDelete() {
+                                return confirm("Are you sure you want to delete this transaction?");
+                            }
+                            </script>
                         </tbody>
                     </table>
                 </div>

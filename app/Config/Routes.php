@@ -45,12 +45,14 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	$routes->post('datatransaksi/(:any)', 'AdminController::updateDataTransaksi/$1');
 	$routes->get('datatransaksi/(:any)/delete', 'AdminController::deleteDataTransaksi/$1');
 	$routes->get('pesanan', 'AdminController::pesanan');
+	$routes->get('kelolapesanan/(:any)', 'AdminController::pesanan/$1');
 	$routes->get('pembayaran', 'AdminController::pembayaran');
 	$routes->get('laporan', 'AdminController::laporan');
-	$routes->get('datapelanggan', 'AdminController::datapelanggan');
+	$routes->get('datapelanggan', 'AdminController::Users');
     $routes->add('datanew', 'AdminController::create');
-	$routes->add('data(:segment)/edit', 'AdminController::edit/$1');
-	$routes->get('data(:segment)/delete', 'AdminController::delete/$1');
+	$routes->add('datapelanggan/(:any)/edit', 'AdminController::edit/$1');
+	$routes->get('datapelanggan/(:any)/delete', 'AdminController::delete/$1');
+
 });
 
 //routes super admin (pemilikusaha)
