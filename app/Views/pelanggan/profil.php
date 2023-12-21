@@ -6,36 +6,24 @@
 
     <div class="container mb-5" style="display: flex; justify-content: center; align-items: center; height: 70vh;">
         <div class="card mt-5" style="width: 25rem;">
+            <h3 class="card-header text-center mb-1 bg-light">Data Pelanggan</h3>
             <div class="card-body">
-                <h3 class="card-title text-center mb-3">Data Pelanggan</h3>
                 <table>
                     <tr>
-                        <th>Nama</th>
+                        <th>Username</th>
                         <td> :
-                            <?= $data_pelanggan['nama'] ?>
+                            <?= $data_pelanggan['username'] ?>
                         </td>
                     </tr>
                     <tr>
-                        <th>Jenis Kelamin </th>
+                        <th>Email </th>
                         <td> :
-                            <?= $data_pelanggan['jenis_kelamin'] ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Alamat</th>
-                        <td> :
-                            <?= $data_pelanggan['alamat'] ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>No. Ponsel</th>
-                        <td> :
-                            <?= $data_pelanggan['no_hp'] ?>
+                            <?= $data_pelanggan['email'] ?>
                         </td>
                     </tr>
                 </table>
-                <a href="<?= base_url('pelanggan/profil/' . $data_pelanggan['id'] . '/edit') ?>" 
-                class="btn btn-warning mt-3">Edit</a>
+                <!-- <a href="<?= base_url('pelanggan/profil/' . $data_pelanggan['id'] . '/edit') ?>" 
+                class="btn btn-warning mt-3">Edit</a> -->
             </div>
         </div>
     </div>

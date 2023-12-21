@@ -40,18 +40,7 @@
                     <li><a href="<?= base_url('pelanggan/dashboard') ?>">BERANDA</a></li>
                     <li><a href="<?= base_url('pelanggan/pesan') ?>">PESAN SEKARANG</a></li>
                     <li><a href="<?= base_url('pelanggan/riwayat_transaksi') ?>">RIWAYAT TRANSAKSI</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">PROFIL
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="<?= base_url('/pelanggan/create_data_pelanggan') ?>">Tambah Data Pelanggan</a>
-                            </li>
-                            <li><a class="dropdown-item" href="<?= base_url('/pelanggan/profil') ?>">Lihat Data
-                                    Pelanggan</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="<?= base_url('/pelanggan/profil') ?>">PROFIL</a></li>
                     <li><a href="<?= base_url('logout') ?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
@@ -100,12 +89,12 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
                         <h4>Join Our Newsletter</h4>
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
