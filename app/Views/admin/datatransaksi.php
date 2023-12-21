@@ -49,10 +49,10 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="dashboard">BERANDA</a></li>
-                    <li><a href="datapelanggan">DATA PELANGGAN</a></li>
-                    <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
+                    <li><a href="<?= base_url('admin/dashboard') ?>">BERANDA</a></li>
+                    <li><a href="<?= base_url('admin/datapelanggan') ?>">DATA PELANGGAN</a></li>
+                    <li><a href="<?= base_url('admin/datatransaksi') ?>">DATA TRANSAKSI</a></li>
+                    <li><a href="<?= base_url('logout') ?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>
@@ -82,7 +82,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Nama</th>
-                                <th>Alamat</th>
+                                <!-- <th>Alamat</th> -->
                                 <th>Tanggal Pemesanan</th>
                                 <th>Jenis Motor </th>
                                 <th>Area Pencucian</th>
@@ -96,7 +96,7 @@
                             <tr>
                                 <td><?= $transaksi['id'] ?></td>
                                 <td><?= $transaksi['nama'] ?></td>
-                                <td><?= $transaksi['alamat'] ?></td>
+                                
                                 <td><?= $transaksi['tgl_pemesanan'] ?></td>
                                 <td><?= $transaksi['jenis_motor'] ?></td>
                                 <td><?= $transaksi['id_area_pencucian'] ?></td>

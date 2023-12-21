@@ -175,8 +175,8 @@ class AdminController extends BaseController
         if($isDataValid){
             $this->dataTransaksi->update($id, [
                 "nama" => $this->request->getPost('nama'),
-                "alamat" => $this->request->getPost('alamat'),
-                 "tgl_pemesanan" => $this->request->getPost('tgl_pemesanan'),
+                // "alamat" => $this->request->getPost('alamat'),
+                "tgl_pemesanan" => $this->request->getPost('tgl_pemesanan'),
                 "jenis_motor" => $this->request->getPost('jenis_motor'),
                 "id_area_pencucian" => $this->request->getPost('id_area_pencucian'),
                 "harga" => $this->request->getPost('harga'),

@@ -21,7 +21,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Alamat</th>
+                                        <!-- <th>Alamat</th> -->
                                         <th>Tanggal Pemesanan</th>
                                         <th>Jenis Motor</th>
                                         <th>Area Pencucian</th>
@@ -36,7 +36,7 @@
                                             <tr>
                                                 <td><?= $no++ ?></td>
                                                 <td><?= $transaksi['nama']?></td>
-                                                <td><?= $transaksi['alamat'] ?></td>
+                                                
                                                 <td><?= $transaksi['tgl_pemesanan'] ?></td>
                                                 <td><?= $transaksi['jenis_motor'] ?></td>
                                                 <td><?= $transaksi['area_pencucian'] ?></td>

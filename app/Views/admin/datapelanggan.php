@@ -50,9 +50,9 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="dashboard">BERANDA</a></li>
-                    <li><a href="datapelanggan">DATA PELANGGAN</a></li>
-                    <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
+                    <li><a href="<?= base_url('admin/dashboard') ?>">BERANDA</a></li>
+                    <li><a href="<?= base_url('admin/datapelanggan') ?>">DATA PELANGGAN</a></li>
+                    <li><a href="<?= base_url('admin/datatransaksi') ?>">DATA TRANSAKSI</a></li>
                     <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
@@ -91,9 +91,9 @@
                                 <tbody>
                                     <?php foreach($users as $pelanggan): ?>
                                     <tr>
-                                        <td><?= $pelanggan->id ?></td>
-                                        <td><?= $pelanggan->email ?></td>
-                                        <td><?= $pelanggan->username ?></td>
+                                        <td><?= $pelanggan['id'] ?></td>
+                                        <td><?= $pelanggan['email'] ?></td>
+                                        <td><?= $pelanggan['username'] ?></td>
                                     </tr>
                                     <?php endforeach ?>
                                     <script>

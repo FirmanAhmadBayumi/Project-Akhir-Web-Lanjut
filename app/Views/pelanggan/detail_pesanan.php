@@ -23,16 +23,16 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <!-- <div class="row mb-3">
                             <label for="alamat" class="col-sm-3 col-form-label text-dark fs-6">Alamat</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control <?= (empty(validation_show_error('alamat'))) ? '' : 'is-invalid' ?>"
+                                <input type="text" class="form-control "
                                 id="alamat" name="alamat" required/>
                                 <div class="invalid-feedback">
-                                    <?= validation_show_error('alamat') ?>
+                                    
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="row mt-3">
                             <label for="tgl" class="col-sm-3 col-form-label text-dark fs-6">Tanggal Pemesanan</label>

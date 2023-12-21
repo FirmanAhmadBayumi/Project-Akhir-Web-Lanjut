@@ -50,10 +50,10 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="dashboard">BERANDA</a></li>
-                    <li><a href="datapelanggan">DATA PELANGGAN</a></li>
-                    <li><a href="datatransaksi">DATA TRANSAKSI</a></li>
-                    <li><a href="<?= base_url('logout')?>">KELUAR</a></li>
+                    <li><a href="<?= base_url('admin/dashboard') ?>">BERANDA</a></li>
+                    <li><a href="<?= base_url('admin/datapelanggan') ?>">DATA PELANGGAN</a></li>
+                    <li><a href="<?= base_url('admin/datatransaksi') ?>">DATA TRANSAKSI</a></li>
+                    <li><a href="<?= base_url('logout') ?>">KELUAR</a></li>
                 </ul>
             </nav><!-- .navbar -->
         </div>
@@ -91,12 +91,12 @@
                                             <input type="text" name="nama" class="form-control"
                                                 placeholder="Masukkan nama" value="<?= $transaksi['nama'] ?>" required>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="alamat">Alamat</label>
                                             <input type="text" name="alamat" class="form-control"
-                                                placeholder="Masukkan alamat" value="<?= $transaksi['alamat'] ?>"
+                                                placeholder="Masukkan alamat" value=""
                                                 required>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label for="tgl_pemesn">Tanggal Pemesanan</label>
                                             <input type="text" name="tgl_pemesanan" class="form-control"

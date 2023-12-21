@@ -183,7 +183,7 @@ class PelangganController extends BaseController
         $this->dataTransaksi->saveDataTransaksi([
             "id_user" =>    $this->request->getvar("id"),
             "nama" => $this->request->getVar("nama"),
-            "alamat" => $this->request->getVar("alamat"),
+            // "alamat" => $this->request->getVar("alamat"),
             "tgl_pemesanan" => $this->request->getVar("tgl"),
             "jenis_motor" => $this->request->getVar("jns_mtr"),
             "id_area_pencucian" => $this->request->getVar("area_pencucian"),
