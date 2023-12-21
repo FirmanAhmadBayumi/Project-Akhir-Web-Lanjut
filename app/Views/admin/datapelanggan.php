@@ -86,7 +86,6 @@
                                         <th>ID</th>
                                         <th>Email</th>
                                         <th>Username</th>
-                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,12 +94,6 @@
                                         <td><?= $pelanggan->id ?></td>
                                         <td><?= $pelanggan->email ?></td>
                                         <td><?= $pelanggan->username ?></td>
-
-                                        <td>
-                                            <a href="<?= base_url('admin/datapelanggan/'.$pelanggan->id.'/delete') ?>"
-                                                class="btn btn-sm btn-danger"
-                                                onclick="return confirmDelete()">Delete</a>
-                                        </td>
                                     </tr>
                                     <?php endforeach ?>
                                     <script>
